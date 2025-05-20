@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Geri Sayım</title>
+  <style>
+    body {margin:0;padding: 0;height: 100vh;background:url('bg.png') no-repeat center center fixed;background-size:cover;display:flex;justify-content:center;align-items:center;font-family:'Segoe UI', sans-serif;color:white;text-shadow:2px 2px 8px rgba(0,0,0,0.8);}
+    .countdown {text-align:center;font-size:4rem;background-color:rgba(0, 0, 0, 0.4);padding:30px 50px;border-radius:20px;}
+    .label {font-size:2rem;margin-bottom:20px;display:block;}
+  </style>
+</head>
+<body>
+  <div class="countdown">
+    <span class="label">♥ Ceylan & Muhammed Evleniyor :) ♥</span>
+    <div id="timer">Yükleniyor...</div>
+  </div>
+  <script>
+    const targetDate = new Date("July 12, 2025 14:00:00").getTime();
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+      if (distance <= 0) {
+        document.getElementById("timer").innerHTML = "Bugün O Gün! 💍";
+        return;
+      }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("timer").innerHTML =
+        `${days} gün ${hours} saat ${minutes} dakika ${seconds} saniye`;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
