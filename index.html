@@ -10,9 +10,14 @@
   </style>
 </head>
 <body>
+  <audio id="myAudio" src="muzik.mp3" preload="auto"></audio>
   <div class="countdown">
     <span class="label">♥ Ceylan & Muhammed Evleniyor :) ♥</span>
     <div id="timer">Yükleniyor...</div>
+    <button onclick="playMusic()" style="margin-top:20px; font-size: 1.5rem; padding: 10px 20px;">
+  💕 Müziği Başlat
+    </button>
+
   </div>
   <script>
     const targetDate = new Date("July 12, 2025 14:00:00").getTime();
