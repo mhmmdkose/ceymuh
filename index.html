@@ -10,7 +10,7 @@
   </style>
 </head>
 <body>
-  <audio id="myAudio" src="muzik.mp3" preload="auto"></audio>
+  <audio id="myAudio" src="nazende.mp3" preload="auto"></audio>
   <div class="countdown">
     <span class="label">♥ Ceylan & Muhammed Evleniyor :) ♥</span>
     <div id="timer">Yükleniyor...</div>
@@ -37,6 +37,10 @@
     }
     setInterval(updateCountdown, 1000);
     updateCountdown();
+    function playMusic() {
+    const audio = document.getElementById("myAudio");
+    audio.play();
+  }
   </script>
 </body>
 </html>
